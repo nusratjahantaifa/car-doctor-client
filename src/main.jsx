@@ -8,7 +8,9 @@ import {
 import router from './Routs/Routs';
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+ <div className='max-w-6xl mx-auto'>
+   <StrictMode>
  <RouterProvider router={router} />
   </StrictMode>,
+ </div>
 )
