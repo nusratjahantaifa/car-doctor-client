@@ -41,6 +41,9 @@ fetch('http://localhost:5000/bookings', {
 .then(res => res.json())
 .then(data => {
     console.log(data);
+    if(data.insertedId){
+      alert('service book successfully')
+    }
 })
   }
     return (
