@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import ServiceCard from "./ServiceCard";
+import useServices from "../../../hooks/useServices";
 const Services = () => {
-      const [services, setServices] = useState([]);
-         useEffect(() => {
-      fetch('http://localhost:5000/services')
-            .then(res => res.json())
-            .then(data => setServices(data));
-    }, [])
+    const [asc, setAsc] = useState(true)
+    const services = useServices(asc);
+    //   const [services, setServices] = useState([]);
+    //      useEffect(() => {
+    //   fetch('https://car-doctor-server-r35x.onrender.com/services')
+    //         .then(res => res.json())
+    //         .then(data => setServices(data));
+    // }, [])
     return (
         <div className="mt-4">
             <div className="text-center">
@@ -15,6 +18,10 @@ const Services = () => {
             <p>The majority have suffered alteration in some form,by injected 
                 humour, or randomised words which don't look even 
                 slightly believable.</p>
+       <button className="btn btn-secondary"
+        onClick={() => setAsc(!asc)}>
+        {asc ? 'Price:High To Low' : 'Price:Low To High'}</button>
+       
         </div>
         <div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

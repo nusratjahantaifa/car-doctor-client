@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       if (!params.id) {
         throw new Error("Invalid Service ID");
       }
-      return fetch(`http://localhost:5000/services/${params.id}`);
+      return fetch(`https://car-doctor-server-r35x.onrender.com/services/${params.id}`);
     }
   }
         ,
